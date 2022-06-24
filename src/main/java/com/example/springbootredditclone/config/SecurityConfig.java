@@ -54,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.cors().and()
+        httpSecurity
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
                         .antMatchers("/api/auth/**")
@@ -68,7 +68,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .antMatchers("/v2/api-docs",
                                 "/configuration/ui",
                                 "/swagger-resources/**",
-                                "/configuration/com.example.springbootredditclone.security",
+                                "/configuration/security",
                                 "/swagger-ui.html",
                                 "/webjars/**")
                         .permitAll()

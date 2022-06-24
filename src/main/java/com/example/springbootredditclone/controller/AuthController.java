@@ -35,6 +35,7 @@ public class AuthController {
     }
 
     // @todo Please fix the unauthorized error after token expiration.
+    // @todo Fix activation link not working for user.
     @PostMapping("/login")
     public AuthenticationResponse login(@RequestBody LoginRequest loginRequest){
         return authService.login(loginRequest);
